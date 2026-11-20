@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Globe2, Users, Heart, MapPin, ArrowRight, Radio, ShieldCheck, BookOpen } from 'lucide-react';
+import { Globe2, Users, Heart, ArrowRight, Radio, ShieldCheck, BookOpen } from 'lucide-react';
 
 const STATS = [
   { name: '동남아·동북아', missionaries: 142, projects: 38, width: '85%', color: '#2563eb' },
@@ -17,6 +17,7 @@ const PRAYERS = [
 export default function Home() {
   return (
     <div>
+      {/* 히어로 섹션 */}
       <section style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%)', color: '#fff', padding: '4rem 1.5rem 5rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'center' }}>
           <div>
@@ -68,6 +69,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 특장점 그리드 카드 구조 */}
       <section style={{ maxWidth: '1200px', margin: '-2.2rem auto 3rem', padding: '0 1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '1.2rem' }}>
         <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
           <Globe2 size={24} color="#2563eb" />
@@ -91,7 +93,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 하단 대시보드 (통계 그래프 / 긴급기도 요약) */}
       <section style={{ maxWidth: '1200px', margin: '0 auto 4rem', padding: '0 1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
+        {/* 권역별 통계 */}
         <div style={{ backgroundColor: '#fff', padding: '1.75rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
             <div>
@@ -115,23 +119,23 @@ export default function Home() {
           </div>
         </div>
 
+        {/* 실시간 긴급 기도제목 피드 */}
         <div style={{ backgroundColor: '#fff', padding: '1.75rem', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
             <div>
-              <h2 style={{ fontSize: '1.2rem', margin: '0 0 0.25rem' }}>현장 긴급 중보기도</h2>
-              <p style={{ margin: 0, fontSize: '0.85rem', color: '#64748b' }}>지금 기도가 필요한 선교 현장</p>
+              <h2 style={{ fontSize: '1.2rem', margin: '0 0 0.25rem' }}>실시간 긴급 중보기도 피드</h2>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: '#64748b' }}>가장 최근 도착한 기도제목</p>
             </div>
-            <Link to="/board" style={{ fontSize: '0.85rem', color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>전체보기 →</Link>
+            <Heart size={20} color="#e11d48" />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {PRAYERS.map((p) => (
-              <div key={p.id} style={{ padding: '1rem', borderRadius: '12px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#1d4ed8' }}><MapPin size={12} /> {p.region}</span>
-                  <span style={{ fontSize: '0.75rem', backgroundColor: '#dbeafe', color: '#1e40af', padding: '0.15rem 0.5rem', borderRadius: '6px' }}>{p.tag}</span>
+              <div key={p.id} style={{ padding: '0.9rem', backgroundColor: '#f8fafc', borderRadius: '10px', border: '1px solid #f1f5f9' }}>
+                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.4rem', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2563eb', backgroundColor: '#eff6ff', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>📌 {p.region}</span>
+                  <span style={{ fontSize: '0.72rem', fontWeight: 600, color: '#dc2626', backgroundColor: '#fef2f2', padding: '0.15rem 0.5rem', borderRadius: '4px' }}>{p.tag}</span>
                 </div>
-                <p style={{ margin: '0 0 0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>{p.title}</p>
-                <div style={{ fontSize: '0.8rem', color: '#64748b' }}>🙏 함께 기도하는 성도 {p.count}명</div>
+                <div style={{ fontSize: '0.88rem', fontWeight: 600, color: '#334155', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{p.title}</div>
               </div>
             ))}
           </div>
