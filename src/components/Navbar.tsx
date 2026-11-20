@@ -31,12 +31,18 @@ export default function Navbar() {
         <nav style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
           <Link to="/" style={navLinkStyle('/')}>글로벌 선교 현황</Link>
           <Link to="/board" style={navLinkStyle('/board')}>선교 소식·중보기도</Link>
-          <a
-            href="https://godnet.app"
-            target="_blank"
-            rel="noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginLeft: '0.5rem', padding: '0.55rem 1rem', backgroundColor: '#1e3a8a', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600, boxShadow: '0 2px 4px rgba(30, 58, 138, 0.2)' }}
-          >
+		  {/* 33번째 줄 주소를 아래와 같이 수정하고 저장하세요 */}
+		  <a
+		    href="https://god-network.app"
+		    target="_blank"
+		    rel="noreferrer"
+		    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginLeft: '0.5rem', padding: '0.55rem 1rem', backgroundColor: '#1e3a8a', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600, boxShadow: '0 2px 4px rgba(30, 58, 138, 0.2)' }}
+		  >
+		    <HeartHandshake size={16} />
+		    GOD 메인 사이트
+		    <ExternalLink size={14} />
+		  </a>
+
             <HeartHandshake size={16} />
             GOD 메인 사이트
             <ExternalLink size={14} />
