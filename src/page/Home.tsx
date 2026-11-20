@@ -36,12 +36,14 @@ export default function Home() {
               <Link to="/board" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.5rem', backgroundColor: '#3b82f6', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700 }}>
                 선교 소식·기도 보기 <ArrowRight size={18} />
               </Link>
-			  <a href="https://god-network.app/bible" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', padding: '0.8rem 1.4rem', backgroundColor: 'rgba(255,255,255,0.12)', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 600 }}>
-			    GOD 사이트 연결
+			  <a 
+			    href="https://god-network.app" 
+			    target="_blank" 
+			    rel="noreferrer" 
+			    style={{ display: 'inline-flex', alignItems: 'center', padding: '0.8rem 1.4rem', backgroundColor: 'rgba(255,255,255,0.12)', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 600 }}
+			  >
+			    GOD BIBLE 연결
 			  </a>
-
-
-
             </div>
           </div>
 
